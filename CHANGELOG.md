@@ -5,6 +5,43 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2025-05-29
+
+### Added
+
+- **Comprehensive Test Suite**: Added extensive test coverage for all package components
+  - **Unit Tests**:
+    - `SpacingConstants` validation tests
+    - `OptimizedSpacing` breakpoint detection and caching tests
+    - `Breakpoint` enum and `BreakpointCache` functionality tests
+    - `AppSpacing` responsive spacing tests
+    - `OpticalAdjustments` visual correction tests
+  - **Widget Tests**:
+    - `Gap` widget dimension and sizing tests
+    - `ResponsiveBox` container and padding tests
+    - `ResponsiveSwitch` device-specific content switching tests
+    - `FastGrid` layout and RTL support tests
+    - `ResponsiveBuilder` breakpoint-based building tests
+    - `ResponsiveGrid` grid layout tests
+    - `ResponsiveContainer` constraint and padding tests
+    - `ResponsiveGap` semantic spacing tests
+    - `ResponsivePositioned` directional positioning tests
+  - **Integration Tests**:
+    - Cross-screen-size responsive behavior tests
+    - RTL layout integration tests
+    - Optical adjustments integration tests
+    - Performance caching validation tests
+  - **Optical Adjustments Tests**:
+    - Spacing adjustment calculations
+    - Asymmetric padding for LTR/RTL layouts
+    - Font size adjustments for different scripts
+    - Shadow generation and scaling
+    - Border radius optical corrections
+    - Text style adjustments with line height and letter spacing
+    - Arabic text handling and font weight mapping
+    - Directional padding and container balancing
+    - List item margin calculations
+
 ## [0.1.0] - 2025-05-28
 
 ### Added
