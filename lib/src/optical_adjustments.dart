@@ -103,7 +103,11 @@ class OpticalAdjustments {
   ///   * [trailingFactor]: Multiplier for trailing padding (default: 0.9)
   ///
   /// Returns: [EdgeInsets] with optically adjusted padding based on text direction.
-  static EdgeInsets asymmetricListPadding({required BuildContext context, required double baseHorizontal, double leadingFactor = 1.1, double trailingFactor = 0.9}) {
+  static EdgeInsets asymmetricListPadding(
+      {required BuildContext context,
+      required double baseHorizontal,
+      double leadingFactor = 1.1,
+      double trailingFactor = 0.9}) {
     final textDirection = Directionality.of(context);
 
     if (textDirection == TextDirection.ltr) {
@@ -241,7 +245,13 @@ class OpticalAdjustments {
     // Base opacity reduced for more subtle appearance
     final baseOpacity = 0.03 * elevation;
 
-    return [BoxShadow(color: (color ?? Colors.black).withOpacity(baseOpacity), blurRadius: 8.0 * elevation, spreadRadius: 0.5 * elevation, offset: Offset(0, 1.0 * elevation))];
+    return [
+      BoxShadow(
+          color: (color ?? Colors.black).withAlpha((baseOpacity * 255).round()),
+          blurRadius: 8.0 * elevation,
+          spreadRadius: 0.5 * elevation,
+          offset: Offset(0, 1.0 * elevation))
+    ];
   }
 
   /// Adjust border radius for better visual perception based on element size.
@@ -437,7 +447,12 @@ class OpticalAdjustments {
   ///   * [bottom]: Padding at the bottom (default: 0.0)
   ///
   /// Returns: [EdgeInsets] with direction-aware padding.
-  static EdgeInsets directionalPadding({required BuildContext context, required double start, required double end, double top = 0.0, double bottom = 0.0}) {
+  static EdgeInsets directionalPadding(
+      {required BuildContext context,
+      required double start,
+      required double end,
+      double top = 0.0,
+      double bottom = 0.0}) {
     final textDirection = Directionality.of(context);
 
     return EdgeInsetsDirectional.fromSTEB(start, top, end, bottom).resolve(textDirection);
@@ -567,16 +582,25 @@ class OpticalAdjustments {
     double? leading,
     double? trailing,
   }) {
-    assert(horizontal != null || (leading != null && trailing != null), 'Either provide horizontal or both leading and trailing values');
+    assert(horizontal != null || (leading != null && trailing != null),
+        'Either provide horizontal or both leading and trailing values');
 
     final textDirection = Directionality.of(context);
     final resolvedLeading = leading ?? horizontal!;
     final resolvedTrailing = trailing ?? horizontal!;
 
     if (textDirection == TextDirection.ltr) {
-      return EdgeInsets.only(left: resolvedLeading, right: resolvedTrailing, top: isFirst ? vertical : vertical / 2, bottom: isLast ? vertical : vertical / 2);
+      return EdgeInsets.only(
+          left: resolvedLeading,
+          right: resolvedTrailing,
+          top: isFirst ? vertical : vertical / 2,
+          bottom: isLast ? vertical : vertical / 2);
     } else {
-      return EdgeInsets.only(left: resolvedTrailing, right: resolvedLeading, top: isFirst ? vertical : vertical / 2, bottom: isLast ? vertical : vertical / 2);
+      return EdgeInsets.only(
+          left: resolvedTrailing,
+          right: resolvedLeading,
+          top: isFirst ? vertical : vertical / 2,
+          bottom: isLast ? vertical : vertical / 2);
     }
   }
 
@@ -637,7 +661,11 @@ class OpticalAdjustments {
   ///   * [increasedContrast]: Whether to increase contrast (for accessibility)
   ///
   /// Returns: The most appropriate [FontWeight].
-  static FontWeight determineFontWeight({required FontWeight desiredWeight, required bool isArabic, bool isHeading = false, bool increasedContrast = false}) {
+  static FontWeight determineFontWeight(
+      {required FontWeight desiredWeight,
+      required bool isArabic,
+      bool isHeading = false,
+      bool increasedContrast = false}) {
     if (!isArabic) {
       // For Latin scripts, we can use the desired weight directly,
       // or adjust for contrast if needed

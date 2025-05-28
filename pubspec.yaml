@@ -1,9 +1,9 @@
 name: mobile_ultra_spacing
 description: >-
   A comprehensive Flutter package for managing responsive spacing, breakpoint detection, 
-  and optical adjustments across all screen sizes. Features ultra-fast caching, 8 precise 
-  breakpoints, full RTL support, and ready-to-use widgets for professional mobile apps.
-version: 0.1.1
+  and optical adjustments across all screen sizes.
+
+version: 0.1.2
 homepage: https://khaled.ee/open-source/mobile_ultra_spacing
 repository: https://github.com/KhaledSMQ/mobile_ultra_spacing.git
 issue_tracker: https://github.com/KhaledSMQ/mobile_ultra_spacing/issues

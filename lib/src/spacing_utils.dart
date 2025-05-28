@@ -595,12 +595,12 @@ class ResponsiveSwitch<T> extends StatelessWidget {
     final spacing = context.spacing; // Access OptimizedSpacing
 
     late final T value;
-    if (spacing.isDesktop && desktop != null) {
-      value = desktop!;
-    } else if (spacing.isTablet && tablet != null) {
-      value = tablet!;
-    } else if (spacing.isMobile && phone != null) {
-      value = phone!;
+    if (desktop != null && spacing.isDesktop) {
+      value = desktop as T;
+    } else if (tablet != null && spacing.isTablet) {
+      value = tablet as T;
+    } else if (phone != null && spacing.isMobile) {
+      value = phone as T;
     } else {
       value = fallback;
     }
