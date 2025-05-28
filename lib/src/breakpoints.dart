@@ -498,15 +498,6 @@ extension BreakpointContext on BuildContext {
   /// For this example, I am adding it as per the file's structure.
   AppSpacing get appSpacing => AppSpacing.of(this);
 
-  /// Convenience getter for `context.appSpacing.isMobile`.
-  bool get isMobile => appSpacing.isMobile;
-
-  /// Convenience getter for `context.appSpacing.isTablet`.
-  bool get isTablet => appSpacing.isTablet;
-
-  /// Convenience getter for `context.appSpacing.isDesktop`.
-  bool get isDesktop => appSpacing.isDesktop;
-
   /// Convenience getter for `context.appSpacing.isRTL`.
   bool get isRTL => appSpacing.isRTL;
 }
